@@ -23,11 +23,11 @@ export default class Configuration {
       barMainTextMoreLink: null,
       barTimeout: 1000,
       theme: {
-        barColor: '#2C7CBF',
+        barColor: '#00005A',
         barTextColor: '#FFF',
-        barMainButtonColor: '#FFF',
-        barMainButtonTextColor: '#2C7CBF',
-        modalMainButtonColor: '#4285F4',
+        barMainButtonColor: '#4900FF',
+        barMainButtonTextColor: '#FFF',
+        modalMainButtonColor: '#4900FF',
         modalMainButtonTextColor: '#FFF',
       },
       language: {
