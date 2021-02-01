@@ -6,7 +6,7 @@ See the demo: [Cookieconsent](https://brainsum.github.io/cookieconsent/)
 
 ## Default look
 
-![Cookieconsent modal](https://raw.githubusercontent.com/brainsum/cookieconsent/master/cc_modal_75.png "Cookieconsent modal")
+![Cookieconsent modal](https://raw.githubusercontent.com/brainsum/getro/master/cc_modal_75.png "Cookieconsent modal")
 
 ## Features
 
@@ -23,11 +23,11 @@ Some services insert dynamically created script tags to the HEAD at page load. T
 
 ### Script tag blocking
 
-Some third party services require you to insert a script tag into your HTML pages. These can be inactivated until the user allowes them.
+Some third party services require you to insert a script tag into your HTML pages. These can be inactivated until the user allows them.
 
 ### Script wrapping
 
-Some services are not inserted in a SCRIPT tag and are obscured by layers of other code. Thats why this script creates a global wrapper function what you can use to wrap and blovk any JS code.
+Some services are not inserted in a SCRIPT tag and are obscured by layers of other code. Thats why this script creates a global wrapper function what you can use to wrap and block any JS code.
 
 ### Local cookies
 
@@ -35,7 +35,7 @@ Finally the local cookies set on your domain can be also filtered by overriding 
 
 ## Usage
 
-1. Download the file cookieconsent.zip from the [latest release](https://github.com/brainsum/cookieconsent/releases/latest), and unpack its content.
+1. Download the file cookieconsent.zip from the [latest release](https://github.com/getro/cookieconsent/releases/latest), and unpack its content.
 
 2. Include the script file into your HTML page **before everything else.**
 
@@ -49,7 +49,7 @@ See a working example in the docs folder.
 
 ### Configuration object
 
-The script is being controlled mainly by a configuration object which is passed to the inital call. It acts as configuration and a global state object.
+The script is being controlled mainly by a configuration object which is passed to the initial call. It acts as configuration and a global state object.
 
 ```javascript
 <script>
