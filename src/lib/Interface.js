@@ -21,8 +21,10 @@ export default class Interface {
       '#cconsent-bar .ccb__right { align-self:center; white-space: nowrap;}',
       '#cconsent-bar .ccb__right > div {display:inline-block; color:#FFF;}',
       '#cconsent-bar a { text-decoration:underline; color:' + window.CookieConsent.config.theme.barTextColor + '; }',
-      '#cconsent-bar button { line-height:normal; font-weight: 600; font-size:13px; border:none; padding:9.5px 16px; color:' + window.CookieConsent.config.theme.barMainButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barMainButtonColor + ';}',
-      '#cconsent-bar a.ccb__edit { margin-right:15px; color: #FFF; font-size: 12px; text-decoration: underline; }',
+      '#cconsent-bar button { margin-left: 16px; line-height:normal; font-weight: 600; font-size:13px; border:none; padding:9.5px 16px; border-radius: 4px; }',
+      '#cconsent-bar button.consent-reject { color:' + window.CookieConsent.config.theme.barSecondaryButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barSecondaryButtonColor + ';}',
+      '#cconsent-bar button.consent-give { color:' + window.CookieConsent.config.theme.barMainButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barMainButtonColor + ';}',
+      '#cconsent-bar a.ccb__edit { color: #FFF; font-size: 12px; text-decoration: underline; }',
       '#cconsent-bar a:hover, #cconsent-bar button:hover { cursor:pointer; }',
       '#cconsent-modal { display:none; font-size:14px; line-height:18px; color:#666; width: 100vw; height: 100vh; position:fixed; left:0; top:0; right:0; bottom:0; font-family:sans-serif; font-size:14px; background-color:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;}',
       '@media (max-width: 600px) { #cconsent-modal { height: 100% } }',
@@ -82,8 +84,9 @@ export default class Interface {
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list li { position: relative; margin: 4px 0 0;}',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list li:before { content: "X"; position: absolute; left: -20px; background: #E2E8F0; color: #FFF;width: 12px; height: 12px; line-height: 12px; text-align: center; top: 3px; padding: 2px; box-sizing: content-box; border-radius: 4px; }',
       '#cconsent-modal .ccm__footer { padding-top:24px; background-color:#FFFFFF; text-align:left; border-top: 1px solid #E2E8F0;}',
+      '#cconsent-modal .ccm__footer button.consent-reject { float: right; background-color:' + window.CookieConsent.config.theme.modalSecondaryButtonColor + '; color:' + window.CookieConsent.config.theme.modalSecondaryButtonTextColor + '; }',
       '#cconsent-modal .ccm__footer button.consent-give { float: right }',
-      '#cconsent-modal .ccm__footer button { line-height:normal; font-size:14px; transition: background-color .5s ease-out; background-color:' + window.CookieConsent.config.theme.modalMainButtonColor + '; color:' + window.CookieConsent.config.theme.modalMainButtonTextColor + '; border:none; padding: 12.5px 24px; border-radius: 4px; cursor:pointer; line-height: 15px; font-size: 15px; font-weight: 400 }',
+      '#cconsent-modal .ccm__footer button { margin-left: 10px; line-height:normal; font-size:14px; transition: background-color .5s ease-out; background-color:' + window.CookieConsent.config.theme.modalMainButtonColor + '; color:' + window.CookieConsent.config.theme.modalMainButtonTextColor + '; border:none; padding: 12.5px 24px; border-radius: 4px; cursor:pointer; line-height: 15px; font-size: 15px; font-weight: 400 }',
       '#cconsent-modal #ccm__footer__consent-modal-submit{ background: none; color: #4900FF; }',
       '#cconsent-modal .ccm__footer button:hover { background-color:' + Utilities.lightenDarkenColor(window.CookieConsent.config.theme.modalMainButtonColor, -20) + '; }',
       '#cconsent-modal .ccm__footer button#ccm__footer__consent-modal-submit {  margin-right:10px; }'
@@ -101,6 +104,7 @@ export default class Interface {
           el('div.ccb__right',
             el('div.ccb__button',
               el('a.ccb__edit', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLinkSetting')),
+              el('button.consent-reject', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnRejectAll')),
               el('button.consent-give', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnAcceptAll'))
             )
           )
@@ -188,7 +192,8 @@ export default class Interface {
         ),
         el('div.ccm__footer',
           el('button#ccm__footer__consent-modal-submit', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')),
-          el('button.consent-give', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll'))
+          el('button.consent-give', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')),
+          el('button.consent-reject', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnRejectAll')),
         )
       )
     );
@@ -201,11 +206,13 @@ export default class Interface {
       if(window.CookieConsent.config.categories[tabGroup.dataset.category].checked) {
         if( ! tabGroup.classList.contains('checked-5jhk')) {
           tabGroup.classList.add('checked-5jhk');
-          tabGroup.querySelector('input.category-onoff').checked = true;
+          var checkbox = tabGroup.querySelector('input.category-onoff')
+          if (checkbox) checkbox.checked = true;
         };
       } else {
         if(tabGroup.classList.contains('checked-5jhk')) tabGroup.classList.remove('checked-5jhk');
-        tabGroup.querySelector('input.category-onoff').checked = false;
+        var checkbox = tabGroup.querySelector('input.category-onoff')
+        if (checkbox) checkbox.checked = false;
       }
     }
   }
@@ -280,6 +287,32 @@ export default class Interface {
       });
     }
 
+    // If you click Reject all cookies
+    var buttonConsentReject = document.querySelectorAll('.consent-reject');
+
+    for(let button of buttonConsentReject) {
+      button.addEventListener('click', () => {
+
+        // We set config to reject consent
+        for(let key in window.CookieConsent.config.categories) {
+          if (window.CookieConsent.config.categories[key].needed == false){
+            window.CookieConsent.config.categories[key].wanted =
+            window.CookieConsent.config.categories[key].checked = false;
+          }
+        }
+
+        this.writeBufferToDOM();
+
+        this.buildCookie((cookie) => {
+          this.setCookie(cookie);
+        });
+
+        this.elements['bar'].classList.add('ccb--hidden');
+        this.elements['modal'].classList.remove('ccm--visible');
+
+        this.modalRedrawIcons();
+      });
+    }
 
     // If you click Cookie settings and open modal
     Array.prototype.forEach.call(document.getElementsByClassName('ccb__edit'), (edit) => {
