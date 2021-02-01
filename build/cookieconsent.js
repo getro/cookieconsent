@@ -2685,7 +2685,7 @@ var Interface = /*#__PURE__*/function () {
   _createClass(Interface, [{
     key: "buildStyle",
     value: function buildStyle() {
-      return (0, _redom.el)('style', '#cconsent-bar, #cconsent-bar * { box-sizing:border-box }', '#cconsent-bar { background-color:' + window.CookieConsent.config.theme.barColor + '; color:' + window.CookieConsent.config.theme.barTextColor + '; padding:15px; text-align:right; font-family:sans-serif; font-size:14px; line-height:18px; position:fixed; bottom:0; left:0; width:100%; z-index:9998; transform: translateY(0); transition: transform .6s ease-in-out; transition-delay: .3s;}', '#cconsent-bar.ccb--hidden {transform: translateY(100%); display:block;}', '#cconsent-bar .ccb__wrapper { display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1800px; margin:0 auto;}', '#cconsent-bar .ccb__left { align-self:center; text-align:left; margin: 15px 0;}', '#cconsent-bar .ccb__left a { margin-left: 5px;}', '#cconsent-bar .ccb__right { align-self:center; white-space: nowrap;}', '#cconsent-bar .ccb__right > div {display:inline-block; color:#FFF;}', '#cconsent-bar a { text-decoration:underline; color:' + window.CookieConsent.config.theme.barTextColor + '; }', '#cconsent-bar button { line-height:normal; font-size:14px; border:none; padding:10px 10px; color:' + window.CookieConsent.config.theme.barMainButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barMainButtonColor + ';}', '#cconsent-bar a.ccb__edit { margin-right:15px }', '#cconsent-bar a:hover, #cconsent-bar button:hover { cursor:pointer; }', '#cconsent-modal { display:none; font-size:14px; line-height:18px; color:#666; width: 100vw; height: 100vh; position:fixed; left:0; top:0; right:0; bottom:0; font-family:sans-serif; font-size:14px; background-color:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;}', '@media (max-width: 600px) { #cconsent-modal { height: 100% } }', '#cconsent-modal h2, #cconsent-modal h3 {color:#333}', '#cconsent-modal.ccm--visible {display:flex}', '#cconsent-modal .ccm__content { max-width:600px; min-height:500px; max-height:600px; overflow-Y:auto; background-color:#EFEFEF; }', '@media (max-width: 600px) { #cconsent-modal .ccm__content { max-width:100vw; height:100%; max-height:initial; }}', '#cconsent-modal .ccm__content > .ccm__content__heading { border-bottom:1px solid #D8D8D8; padding:35px 35px 20px; background-color:#EFEFEF; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__heading h2 { font-size:21px; font-weight:600; color:#333; margin:0 }', '#cconsent-modal .ccm__content > .ccm__content__heading .ccm__cheading__close {font-weight:600; color:#888; cursor:pointer; font-size:26px; position: absolute; right:15px; top: 15px;}', '#cconsent-modal h2, #cconsent-modal h3 {margin-top:0}', '#cconsent-modal .ccm__content > .ccm__content__body { background-color:#FFF;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup {margin:0; border-bottom: 1px solid #D8D8D8; }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head::before { position:absolute; left:35px; font-size:1.4em; font-weight: 600; color:#E56385; content:"×"; display:inline-block; margin-right: 20px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.checked-5jhk .ccm__tab-head::before {font-size:1em; content:"✔"; color:#28A834}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__tab-head__icon-wedge { transition: transform .3s ease-out; transform-origin: 16px 6px 0; position:absolute;right:25px; top:50%; transform:rotate(0deg); transform:translateY(-50%)}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__tab-head__icon-wedge > svg { pointer-events: none; }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-head .ccm__tab-head__icon-wedge {transform:rotate(-180deg)}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {color:#333; padding:17px 35px 17px 56px; margin:0}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content {padding:25px 35px; margin:0}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head { transition: background-color .5s ease-out }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head:hover { background-color:#F9F9F9 }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {font-weight:600; cursor:pointer; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-content {display:none;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-head { background-color:#F9F9F9 }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-content {display:flex;}', '@media (max-width: 600px) { #cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-content {flex-direction:column} }', '@media (max-width: 600px) { #cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left { margin-bottom:20px; } }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-component {display:flex; margin-right:35px; align-items:center;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-component > div {font-weight:600;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-group {width:40px; height:20px; margin:0 10px; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch {position: absolute; top:0; right:0; display: inline-block; width: 40px; height: 20px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input {display:none;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch .ccm__switch__slider  {position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius:10px; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch .ccm__switch__slider:before  {position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; border-radius:50%; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:checked + .ccm__switch__slider  {background-color: #28A834;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:focus + .ccm__switch__slider  {box-shadow: 0 0 1px #28A834;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:checked + .ccm__switch__slider:before  {-webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px);}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content h3 {font-size:18px; margin-bottom:10px; line-height:1;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content p {color:#444; margin-bottom:0}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list:not(:empty) {margin-top:30px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list .ccm__list__title {color:#333; font-weight:600;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list ul { margin:15px 0; padding-left:15px }', '#cconsent-modal .ccm__footer { padding:35px; background-color:#EFEFEF; text-align:center; display: flex; align-items:center; justify-content:flex-end; }', '#cconsent-modal .ccm__footer button { line-height:normal; font-size:14px; transition: background-color .5s ease-out; background-color:' + window.CookieConsent.config.theme.modalMainButtonColor + '; color:' + window.CookieConsent.config.theme.modalMainButtonTextColor + '; border:none; padding:13px; min-width:110px; border-radius: 2px; cursor:pointer; }', '#cconsent-modal .ccm__footer button:hover { background-color:' + _Utilities.default.lightenDarkenColor(window.CookieConsent.config.theme.modalMainButtonColor, -20) + '; }', '#cconsent-modal .ccm__footer button#ccm__footer__consent-modal-submit {  margin-right:10px; }');
+      return (0, _redom.el)('style', '#cconsent-bar, #cconsent-bar * { box-sizing:border-box }', '#cconsent-bar { background-color:' + window.CookieConsent.config.theme.barColor + '; color:' + window.CookieConsent.config.theme.barTextColor + '; padding:15px; text-align:right; font-family:sans-serif; font-size:14px; line-height:18px; position:fixed; bottom:0; left:0; width:100%; z-index:9998; transform: translateY(0); transition: transform .6s ease-in-out; transition-delay: .3s;}', '#cconsent-bar.ccb--hidden {transform: translateY(100%); display:block;}', '#cconsent-bar .cc-text {font-weight: 700; font-size: 15px; line-height: 22px; }', '#cconsent-bar .ccb__wrapper { display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1800px; margin:0 auto;}', '#cconsent-bar .ccb__left { align-self:center; text-align:left; margin: 15px 0;}', '#cconsent-bar .ccb__left a { margin-left: 5px;}', '#cconsent-bar .ccb__right { align-self:center; white-space: nowrap;}', '#cconsent-bar .ccb__right > div {display:inline-block; color:#FFF;}', '#cconsent-bar a { text-decoration:underline; color:' + window.CookieConsent.config.theme.barTextColor + '; }', '#cconsent-bar button { margin-left: 16px; line-height:normal; font-weight: 600; font-size:13px; border:none; padding:9.5px 16px; border-radius: 4px; }', '#cconsent-bar button.consent-reject { color:' + window.CookieConsent.config.theme.barSecondaryButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barSecondaryButtonColor + ';}', '#cconsent-bar button.consent-give { color:' + window.CookieConsent.config.theme.barMainButtonTextColor + '; background-color:' + window.CookieConsent.config.theme.barMainButtonColor + ';}', '#cconsent-bar a.ccb__edit { color: #FFF; font-size: 12px; text-decoration: underline; }', '#cconsent-bar a:hover, #cconsent-bar button:hover { cursor:pointer; }', '#cconsent-modal { display:none; font-size:14px; line-height:18px; color:#666; width: 100vw; height: 100vh; position:fixed; left:0; top:0; right:0; bottom:0; font-family:sans-serif; font-size:14px; background-color:rgba(0,0,0,0.6); z-index:9999; align-items:center; justify-content:center;}', '@media (max-width: 600px) { #cconsent-modal { height: 100% } }', '#cconsent-modal h2, #cconsent-modal h3 {color:#333}', '#cconsent-modal.ccm--visible {display:flex}', '#cconsent-modal .ccm__content { max-width:600px; max-height:600px; padding: 24px; overflow-Y:auto; background-color:#FFFFFF; }', '@media (max-width: 600px) { #cconsent-modal .ccm__content { max-width:100vw; height:100%; max-height:initial; }}', '#cconsent-modal .ccm__content > .ccm__content__heading { background-color:#FFFFFF; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__heading h2 { font-size:18px; line-height: 27px; font-weight:600; color:#00002E; margin:0 }', '#cconsent-modal .ccm__content > .ccm__content__heading p { margin-top: 8px; font-size:12px; line-height: 22px; font-weight:400; color:#00002E; margin:0 }', '#cconsent-modal .ccm__content > .ccm__content__heading .ccm__cheading__close {font-weight:600; color:#7C899C; cursor:pointer; font-size:26px; position: absolute; right: 0; top: 0;}', '#cconsent-modal h2, #cconsent-modal h3 {margin-top:0}', '#cconsent-modal .ccm__content > .ccm__content__body { background-color:#FFF;}', '#cconsent-modal .ccm__content .ccm__tabs { margin: 24px 0;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup {margin:0 0 10px; background: rgba(0,0,90,0.02);}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head::before { position:absolute; left:35px; font-size:1.4em; font-weight: 600; color:#E56385; content:"×"; display:inline-block; margin-right: 20px; content: none}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.checked-5jhk .ccm__tab-head::before {font-size:1em; content:"✔"; color:#28A834; content: none}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__tab-head__icon-wedge { transition: transform .3s ease-out; transform-origin: 16px 6px 0; position:absolute;right:25px; top:50%; transform:rotate(0deg); transform:translateY(-50%)}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__tab-head__icon-wedge > svg { pointer-events: none; }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch-component {display:inline-block; align-items:center;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch-component > div {font-weight:600;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch-group {width:40px; height:20px; margin:0 10px; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch {position: absolute; top:0; right:0; display: inline-block; width: 40px; height: 20px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch input {display:none;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch .ccm__switch__slider  {position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #A6B1BF; border-radius:10px; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch .ccm__switch__slider:before  {position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; border-radius:50%; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch input:checked + .ccm__switch__slider  {background-color: #4900FF;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch input:focus + .ccm__switch__slider  {box-shadow: 0 0 1px #28A834;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch input:disabled + .ccm__switch__slider  {background-color: #E2E8F0;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-head .ccm__switch input:checked + .ccm__switch__slider:before  {-webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px);}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-head .ccm__tab-head__icon-wedge {transform:rotate(-180deg)}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {color: #4C5566; padding:16px; margin:0; display: flex;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content {padding: 20px; margin:0; background: #FFF; border: 1px solid rgba(0,0,90, 0.05); border-top: none}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head { transition: background-color .5s ease-out }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head:hover { background-color:#F9F9F9 }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {font-weight:400; cursor:pointer; position:relative; font-size: 13px; line-height: 22px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup .ccm__tab-content {display:none;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-head { background-color:#F9F9F9 }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-content {display:flex; flex-direction: column; }', '@media (max-width: 600px) { #cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-content {flex-direction:column} }', '@media (max-width: 600px) { #cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left { margin-bottom:20px; } }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-component {display:flex; margin-right:35px; align-items:center;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-component > div {font-weight:600;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch-group {width:40px; height:20px; margin:0 10px; position:relative;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch {position: absolute; top:0; right:0; display: inline-block; width: 40px; height: 20px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input {display:none;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch .ccm__switch__slider  {position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; border-radius:10px; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch .ccm__switch__slider:before  {position: absolute; content: ""; height: 12px; width: 12px; left: 4px; bottom: 4px; background-color: white; border-radius:50%; -webkit-transition: .4s; transition: .4s;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:checked + .ccm__switch__slider  {background-color: #28A834;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:focus + .ccm__switch__slider  {box-shadow: 0 0 1px #28A834;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__tab-content__left .ccm__switch input:checked + .ccm__switch__slider:before  {-webkit-transform: translateX(20px); -ms-transform: translateX(20px); transform: translateX(20px);}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content h3 {font-size:18px; margin-bottom:10px; line-height:1;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content p {color:#00002E; margin-bottom:0; margin-top: 0; font-size: 12px; line-height: 22px;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list:not(:empty) { margin-top:0px; }', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list .ccm__list__title {color:#333; font-weight:600;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list ul { color: #00002E; font-size: 12px; line-height: 22px; margin:15px 0; padding-left:30px; list-style: none}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list li { position: relative; margin: 4px 0 0;}', '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content .ccm__list li:before { content: "X"; position: absolute; left: -20px; background: #E2E8F0; color: #FFF;width: 12px; height: 12px; line-height: 12px; text-align: center; top: 3px; padding: 2px; box-sizing: content-box; border-radius: 4px; }', '#cconsent-modal .ccm__footer { padding-top:24px; background-color:#FFFFFF; text-align:left; border-top: 1px solid #E2E8F0;}', '#cconsent-modal .ccm__footer button.consent-reject { float: right; background-color:' + window.CookieConsent.config.theme.modalSecondaryButtonColor + '; color:' + window.CookieConsent.config.theme.modalSecondaryButtonTextColor + '; }', '#cconsent-modal .ccm__footer button.consent-give { float: right }', '#cconsent-modal .ccm__footer button { margin-left: 10px; line-height:normal; font-size:14px; transition: background-color .5s ease-out; background-color:' + window.CookieConsent.config.theme.modalMainButtonColor + '; color:' + window.CookieConsent.config.theme.modalMainButtonTextColor + '; border:none; padding: 12.5px 24px; border-radius: 4px; cursor:pointer; line-height: 15px; font-size: 15px; font-weight: 400 }', '#cconsent-modal #ccm__footer__consent-modal-submit{ background: none; color: #4900FF; }', '#cconsent-modal .ccm__footer button:hover { background-color:' + _Utilities.default.lightenDarkenColor(window.CookieConsent.config.theme.modalMainButtonColor, -20) + '; }', '#cconsent-modal .ccm__footer button#ccm__footer__consent-modal-submit {  margin-right:10px; }');
     }
   }, {
     key: "buildBar",
@@ -2694,7 +2694,7 @@ var Interface = /*#__PURE__*/function () {
         href: window.CookieConsent.config.barMainTextMoreLink,
         target: '_blank',
         rel: 'noopener noreferrer'
-      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLearnMore')) : null)), (0, _redom.el)('div.ccb__right', (0, _redom.el)('div.ccb__button', (0, _redom.el)('a.ccb__edit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLinkSetting')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnAcceptAll'))))));
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLearnMore')) : null)), (0, _redom.el)('div.ccb__right', (0, _redom.el)('div.ccb__button', (0, _redom.el)('a.ccb__edit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLinkSetting')), (0, _redom.el)('button.consent-reject', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnRejectAll')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barBtnAcceptAll'))))));
     }
   }, {
     key: "buildModal",
@@ -2714,7 +2714,7 @@ var Interface = /*#__PURE__*/function () {
             listItems.push((0, _redom.el)('li', _Language.default.getTranslation(list[item], window.CookieConsent.config.language.current, 'name')));
           }
 
-          return [(0, _redom.el)('div.ccm__list', (0, _redom.el)('span.ccm__list__title', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalAffectedSolutions')), (0, _redom.el)('ul', listItems))];
+          return [(0, _redom.el)('ul', listItems)];
         }
       };
 
@@ -2725,7 +2725,12 @@ var Interface = /*#__PURE__*/function () {
         for (var key in window.CookieConsent.config.categories) {
           contentItems.push((0, _redom.el)('dl.ccm__tabgroup' + '.' + key + (window.CookieConsent.config.categories[key].checked ? '.checked-5jhk' : ''), {
             'data-category': key
-          }, (0, _redom.el)('dt.ccm__tab-head', _Language.default.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name'), (0, _redom.el)('a.ccm__tab-head__icon-wedge', (0, _redom.el)(document.createElementNS("http://www.w3.org/2000/svg", "svg"), {
+          }, (0, _redom.el)('dt.ccm__tab-head', (0, _redom.el)('div.ccm__switch-component', (0, _redom.el)('div.ccm__switch-group', (0, _redom.el)('label.ccm__switch', (0, _redom.el)('input.category-onoff', {
+            type: 'checkbox',
+            'data-category': key,
+            'checked': window.CookieConsent.config.categories[key].checked,
+            disabled: window.CookieConsent.config.categories[key].needed
+          }), (0, _redom.el)('span.ccm__switch__slider')))), _Language.default.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name'), (0, _redom.el)('a.ccm__tab-head__icon-wedge', (0, _redom.el)(document.createElementNS("http://www.w3.org/2000/svg", "svg"), {
             version: "1.2",
             preserveAspectRatio: "none",
             viewBox: "0 0 24 24",
@@ -2737,11 +2742,7 @@ var Interface = /*#__PURE__*/function () {
             class: "icon-wedge-angle-down",
             d: "M17.2,9.84c0-0.09-0.04-0.18-0.1-0.24l-0.52-0.52c-0.13-0.13-0.33-0.14-0.47-0.01c0,0-0.01,0.01-0.01,0.01  l-4.1,4.1l-4.09-4.1C7.78,8.94,7.57,8.94,7.44,9.06c0,0-0.01,0.01-0.01,0.01L6.91,9.6c-0.13,0.13-0.14,0.33-0.01,0.47  c0,0,0.01,0.01,0.01,0.01l4.85,4.85c0.13,0.13,0.33,0.14,0.47,0.01c0,0,0.01-0.01,0.01-0.01l4.85-4.85c0.06-0.06,0.1-0.15,0.1-0.24  l0,0H17.2z",
             style: "fill: rgb(51, 51, 51);"
-          })))), (0, _redom.el)('dd.ccm__tab-content', (0, _redom.el)('div.ccm__tab-content__left', !window.CookieConsent.config.categories[key].needed && (0, _redom.el)('div.ccm__switch-component', (0, _redom.el)('div.status-off', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'off')), (0, _redom.el)('div.ccm__switch-group', (0, _redom.el)('label.ccm__switch', (0, _redom.el)('input.category-onoff', {
-            type: 'checkbox',
-            'data-category': key,
-            'checked': window.CookieConsent.config.categories[key].checked
-          }), (0, _redom.el)('span.ccm__switch__slider'))), (0, _redom.el)('div.status-on', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'on')))), (0, _redom.el)('div.right', (0, _redom.el)('h3', _Language.default.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name')), (0, _redom.el)('p', _Language.default.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description')), (0, _redom.el)('div.ccm__list', listCookies(key))))));
+          })))), (0, _redom.el)('dd.ccm__tab-content', (0, _redom.el)('p', _Language.default.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description')), (0, _redom.el)('div.ccm__list', listCookies(key)))));
           i++;
         }
 
@@ -2752,7 +2753,7 @@ var Interface = /*#__PURE__*/function () {
         href: window.CookieConsent.config.modalMainTextMoreLink,
         target: '_blank',
         rel: 'noopener noreferrer'
-      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')))));
+      }, _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null), (0, _redom.el)('div.ccm__cheading__close', '×')), (0, _redom.el)('div.ccm__content__body', (0, _redom.el)('div.ccm__tabs', modalTabGroups())), (0, _redom.el)('div.ccm__footer', (0, _redom.el)('button#ccm__footer__consent-modal-submit', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnSave')), (0, _redom.el)('button.consent-give', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnAcceptAll')), (0, _redom.el)('button.consent-reject', _Language.default.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalBtnRejectAll')))));
     }
   }, {
     key: "modalRedrawIcons",
@@ -2769,13 +2770,15 @@ var Interface = /*#__PURE__*/function () {
           if (window.CookieConsent.config.categories[tabGroup.dataset.category].checked) {
             if (!tabGroup.classList.contains('checked-5jhk')) {
               tabGroup.classList.add('checked-5jhk');
-              tabGroup.querySelector('input.category-onoff').checked = true;
+              var checkbox = tabGroup.querySelector('input.category-onoff');
+              if (checkbox) checkbox.checked = true;
             }
 
             ;
           } else {
             if (tabGroup.classList.contains('checked-5jhk')) tabGroup.classList.remove('checked-5jhk');
-            tabGroup.querySelector('input.category-onoff').checked = false;
+            var checkbox = tabGroup.querySelector('input.category-onoff');
+            if (checkbox) checkbox.checked = false;
           }
         }
       } catch (err) {
@@ -2857,12 +2860,49 @@ var Interface = /*#__PURE__*/function () {
 
             _this.modalRedrawIcons();
           });
-        } // If you click Cookie settings and open modal
+        } // If you click Reject all cookies
 
       } catch (err) {
         _iterator2.e(err);
       } finally {
         _iterator2.f();
+      }
+
+      var buttonConsentReject = document.querySelectorAll('.consent-reject');
+
+      var _iterator3 = _createForOfIteratorHelper(buttonConsentReject),
+          _step3;
+
+      try {
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var _button = _step3.value;
+
+          _button.addEventListener('click', function () {
+            // We set config to reject consent
+            for (var key in window.CookieConsent.config.categories) {
+              if (window.CookieConsent.config.categories[key].needed == false) {
+                window.CookieConsent.config.categories[key].wanted = window.CookieConsent.config.categories[key].checked = false;
+              }
+            }
+
+            _this.writeBufferToDOM();
+
+            _this.buildCookie(function (cookie) {
+              _this.setCookie(cookie);
+            });
+
+            _this.elements['bar'].classList.add('ccb--hidden');
+
+            _this.elements['modal'].classList.remove('ccm--visible');
+
+            _this.modalRedrawIcons();
+          });
+        } // If you click Cookie settings and open modal
+
+      } catch (err) {
+        _iterator3.e(err);
+      } finally {
+        _iterator3.f();
       }
 
       Array.prototype.forEach.call(document.getElementsByClassName('ccb__edit'), function (edit) {
@@ -2932,29 +2972,29 @@ var Interface = /*#__PURE__*/function () {
   }, {
     key: "writeBufferToDOM",
     value: function writeBufferToDOM() {
-      var _iterator3 = _createForOfIteratorHelper(window.CookieConsent.buffer.appendChild),
-          _step3;
+      var _iterator4 = _createForOfIteratorHelper(window.CookieConsent.buffer.appendChild),
+          _step4;
 
       try {
-        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-          var action = _step3.value;
+        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+          var action = _step4.value;
 
           if (window.CookieConsent.config.categories[action.category].wanted === true) {
             Node.prototype.appendChild.apply(action.this, action.arguments);
           }
         }
       } catch (err) {
-        _iterator3.e(err);
+        _iterator4.e(err);
       } finally {
-        _iterator3.f();
+        _iterator4.f();
       }
 
-      var _iterator4 = _createForOfIteratorHelper(window.CookieConsent.buffer.insertBefore),
-          _step4;
+      var _iterator5 = _createForOfIteratorHelper(window.CookieConsent.buffer.insertBefore),
+          _step5;
 
       try {
-        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-          var _action = _step4.value;
+        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+          var _action = _step5.value;
 
           if (window.CookieConsent.config.categories[_action.category].wanted === true) {
             _action.arguments[1] = _action.arguments[0].parentNode === null ? _action.this.lastChild : _action.arguments[1];
@@ -2962,9 +3002,9 @@ var Interface = /*#__PURE__*/function () {
           }
         }
       } catch (err) {
-        _iterator4.e(err);
+        _iterator5.e(err);
       } finally {
-        _iterator4.f();
+        _iterator5.f();
       }
     }
   }, {
@@ -2989,7 +3029,7 @@ var Interface = /*#__PURE__*/function () {
   }, {
     key: "setCookie",
     value: function setCookie(cookie, callback) {
-      var expires_in = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+      var expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
       document.cookie = "cconsent=".concat(JSON.stringify(cookie), "; expires=").concat(expires_in, "; path=/;");
       if (callback) callback();
     }
@@ -3046,12 +3086,16 @@ var Configuration = /*#__PURE__*/function () {
       barMainTextMoreLink: null,
       barTimeout: 1000,
       theme: {
-        barColor: '#2C7CBF',
+        barColor: '#00005A',
         barTextColor: '#FFF',
-        barMainButtonColor: '#FFF',
-        barMainButtonTextColor: '#2C7CBF',
-        modalMainButtonColor: '#4285F4',
-        modalMainButtonTextColor: '#FFF'
+        barMainButtonColor: '#4900FF',
+        barMainButtonTextColor: '#FFF',
+        barSecondaryButtonColor: '#2500AD',
+        barSecondaryButtonTextColor: '#FFF',
+        modalMainButtonColor: '#4900FF',
+        modalMainButtonTextColor: '#FFF',
+        modalSecondaryButtonColor: '#2500AD',
+        modalSecondaryButtonTextColor: '#FFF'
       },
       language: {
         current: 'en',
@@ -3059,11 +3103,13 @@ var Configuration = /*#__PURE__*/function () {
           en: {
             barMainText: 'This website uses cookies to ensure you get the best experience on our website.',
             barLinkSetting: 'Cookie Settings',
-            barBtnAcceptAll: 'Accept all cookies',
+            barBtnAcceptAll: 'Accept all',
+            barBtnRejectAll: 'Reject all',
             modalMainTitle: 'Cookie settings',
             modalMainText: 'Cookies are small piece of data sent from a website and stored on the user\'s computer by the user\'s web browser while the user is browsing. Your browser stores each message in a small file, called cookie. When you request another page from the server, your browser sends the cookie back to the server. Cookies were designed to be a reliable mechanism for websites to remember information or to record the user\'s browsing activity.',
             modalBtnSave: 'Save current settings',
-            modalBtnAcceptAll: 'Accept all cookies and close',
+            modalBtnAcceptAll: 'Accept all',
+            modalBtnRejectAll: 'Reject all',
             modalAffectedSolutions: 'Affected solutions:',
             learnMore: 'Learn More',
             barLearnMore: 'Learn More',
