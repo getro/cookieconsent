@@ -127,7 +127,6 @@ export default class Interface {
         }
 
         return [
-          // el('span.ccm__list__title', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalAffectedSolutions')),
           el('ul', listItems)
         ];
       }
