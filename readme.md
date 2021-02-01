@@ -1,4 +1,4 @@
-# Cookieconsent Script
+# Getro Cookieconsent Script
 
 A script that displays a cookie consent message as required by EU regulation (GDPR). The plugin displays a message on the user's first visit and they have the ability to consent to different categories of cookies and services.
 
