@@ -17,6 +17,7 @@ export default class Interface {
       '#cconsent-bar .cc-text {font-weight: 700; font-size: 15px; line-height: 22px; }',
       '#cconsent-bar .ccb__wrapper { display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1800px; margin:0 auto;}',
       '#cconsent-bar .ccb__left { align-self:center; text-align:left; margin: 15px 0;}',
+      '#cconsent-bar .ccb__left a { margin-left: 5px;}',
       '#cconsent-bar .ccb__right { align-self:center; white-space: nowrap;}',
       '#cconsent-bar .ccb__right > div {display:inline-block; color:#FFF;}',
       '#cconsent-bar a { text-decoration:underline; color:' + window.CookieConsent.config.theme.barTextColor + '; }',
@@ -93,7 +94,9 @@ export default class Interface {
     return el('div#cconsent-bar.ccb--hidden',
         el(`div.ccb__wrapper`,
           el('div.ccb__left',
-            el('div.cc-text', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'))
+            el('div.cc-text', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barMainText'),
+              (window.CookieConsent.config.barMainTextMoreLink) ? el('a', { href: window.CookieConsent.config.barMainTextMoreLink, target: '_blank', rel: 'noopener noreferrer' }, Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'barLearnMore')) : null
+            )
           ),
           el('div.ccb__right',
             el('div.ccb__button',
@@ -137,45 +140,32 @@ export default class Interface {
       let i = 0;
       for (let key in window.CookieConsent.config.categories) {
 
-        contentItems.push(el('dl.ccm__tabgroup' + '.' + key + ((window.CookieConsent.config.categories[key].checked) ? '.checked-5jhk' : ''), {'data-category':key},
-                            el('dt.ccm__tab-head',
-                              el('div.ccm__switch-component',
-                                el('div.ccm__switch-group',
-                                  el('label.ccm__switch',
-                                    el('input.category-onoff', {type:'checkbox', 'data-category': key, 'checked': window.CookieConsent.config.categories[key].checked, disabled: window.CookieConsent.config.categories[key].needed}),
-                                    el('span.ccm__switch__slider')
-                                  )
-                                ),
-                              ),
-                              Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name'),
-                              el('a.ccm__tab-head__icon-wedge',
-                                el(document.createElementNS("http://www.w3.org/2000/svg", "svg"), { version: "1.2", preserveAspectRatio: "none", viewBox: "0 0 24 24", class: "icon-wedge-svg", "data-id": "e9b3c566e8c14cfea38af128759b91a3", style: "opacity: 1; mix-blend-mode: normal; fill: rgb(51, 51, 51); width: 32px; height: 32px;"},
-                                  el(document.createElementNS("http://www.w3.org/2000/svg", "path"), { 'xmlns:default': "http://www.w3.org/2000/svg", class: "icon-wedge-angle-down", d: "M17.2,9.84c0-0.09-0.04-0.18-0.1-0.24l-0.52-0.52c-0.13-0.13-0.33-0.14-0.47-0.01c0,0-0.01,0.01-0.01,0.01  l-4.1,4.1l-4.09-4.1C7.78,8.94,7.57,8.94,7.44,9.06c0,0-0.01,0.01-0.01,0.01L6.91,9.6c-0.13,0.13-0.14,0.33-0.01,0.47  c0,0,0.01,0.01,0.01,0.01l4.85,4.85c0.13,0.13,0.33,0.14,0.47,0.01c0,0,0.01-0.01,0.01-0.01l4.85-4.85c0.06-0.06,0.1-0.15,0.1-0.24  l0,0H17.2z", style: "fill: rgb(51, 51, 51);" })
-                                )
-                              ),
-                            ),
-                            el('dd.ccm__tab-content',
-                              // el('div.ccm__tab-content__left',
-                              //   ( ! window.CookieConsent.config.categories[key].needed) && el('div.ccm__switch-component', el('div.status-off', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'off')),
-                              //   el('div.ccm__switch-group',
-                              //     el('label.ccm__switch',
-                              //       el('input.category-onoff', {type:'checkbox', 'data-category': key, 'checked': window.CookieConsent.config.categories[key].checked}),
-                              //       el('span.ccm__switch__slider')
-                              //     )
-                              //   ),
-                              //   el('div.status-on', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'on')))
-                              // ),
-                              // el('div.right',
-                                //el('h3', Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name')),
-                                el('p', Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description')),
-                                el('div.ccm__list',
-                                  listCookies(key)
-                                )
-                              // )
-                            )
-                          )
-                        );
-
+        contentItems.push(
+          el('dl.ccm__tabgroup' + '.' + key + ((window.CookieConsent.config.categories[key].checked) ? '.checked-5jhk' : ''), {'data-category':key},
+            el('dt.ccm__tab-head',
+              el('div.ccm__switch-component',
+                el('div.ccm__switch-group',
+                  el('label.ccm__switch',
+                    el('input.category-onoff', {type:'checkbox', 'data-category': key, 'checked': window.CookieConsent.config.categories[key].checked, disabled: window.CookieConsent.config.categories[key].needed}),
+                    el('span.ccm__switch__slider')
+                  )
+                ),
+              ),
+              Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'name'),
+              el('a.ccm__tab-head__icon-wedge',
+                el(document.createElementNS("http://www.w3.org/2000/svg", "svg"), { version: "1.2", preserveAspectRatio: "none", viewBox: "0 0 24 24", class: "icon-wedge-svg", "data-id": "e9b3c566e8c14cfea38af128759b91a3", style: "opacity: 1; mix-blend-mode: normal; fill: rgb(51, 51, 51); width: 32px; height: 32px;"},
+                  el(document.createElementNS("http://www.w3.org/2000/svg", "path"), { 'xmlns:default': "http://www.w3.org/2000/svg", class: "icon-wedge-angle-down", d: "M17.2,9.84c0-0.09-0.04-0.18-0.1-0.24l-0.52-0.52c-0.13-0.13-0.33-0.14-0.47-0.01c0,0-0.01,0.01-0.01,0.01  l-4.1,4.1l-4.09-4.1C7.78,8.94,7.57,8.94,7.44,9.06c0,0-0.01,0.01-0.01,0.01L6.91,9.6c-0.13,0.13-0.14,0.33-0.01,0.47  c0,0,0.01,0.01,0.01,0.01l4.85,4.85c0.13,0.13,0.33,0.14,0.47,0.01c0,0,0.01-0.01,0.01-0.01l4.85-4.85c0.06-0.06,0.1-0.15,0.1-0.24  l0,0H17.2z", style: "fill: rgb(51, 51, 51);" })
+                )
+              ),
+            ),
+            el('dd.ccm__tab-content',
+              el('p', Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description')),
+              el('div.ccm__list',
+                listCookies(key)
+              )
+            )
+          )
+        );
         i++;
       }
 
