@@ -424,7 +424,7 @@ export default class Interface {
   }
 
   setCookie(cookie, callback) {
-    const expires_in = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString();
+    const expires_in = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
 
     document.cookie = `cconsent=${JSON.stringify(cookie)}; expires=${expires_in}; path=/;`;
     if (callback) callback();
