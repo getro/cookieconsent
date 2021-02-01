@@ -6,7 +6,7 @@ See the demo: [Cookieconsent](https://brainsum.github.io/cookieconsent/)
 
 ## Default look
 
-![Cookieconsent modal](https://raw.githubusercontent.com/brainsum/getro/master/cc_modal_75.png "Cookieconsent modal")
+![Cookieconsent modal](https://raw.githubusercontent.com/getro/cookieconsent/master/cc_modal_75.png "Cookieconsent modal")
 
 ## Features
 
