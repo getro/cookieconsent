@@ -30,11 +30,13 @@ export default class Interface {
       '@media (max-width: 600px) { #cconsent-modal { height: 100% } }',
       '#cconsent-modal h2, #cconsent-modal h3 {color:#333}',
       '#cconsent-modal.ccm--visible {display:flex}',
-      '#cconsent-modal .ccm__content { max-width:600px; max-height:600px; padding: 24px; overflow-Y:auto; background-color:#FFFFFF; }',
+      '#cconsent-modal .ccm__content { max-width:600px; padding: 24px; overflow-Y:auto; background-color:#FFFFFF; }',
       '@media (max-width: 600px) { #cconsent-modal .ccm__content { max-width:100vw; height:100%; max-height:initial; }}',
       '#cconsent-modal .ccm__content > .ccm__content__heading { background-color:#FFFFFF; position:relative;}',
-      '#cconsent-modal .ccm__content > .ccm__content__heading h2 { font-size:18px; line-height: 27px; font-weight:600; color:#00002E; margin:0 }',
+      '#cconsent-modal .ccm__content > .ccm__content__heading h2 { font-size:18px; line-height: 27px; font-weight:600; color:#00002E; margin:0 0 8px; }',
       '#cconsent-modal .ccm__content > .ccm__content__heading p { margin-top: 8px; font-size:12px; line-height: 22px; font-weight:400; color:#00002E; margin:0 }',
+      '#cconsent-modal .ccm__content > .ccm__content__heading p span { display: inline-block; margin-bottom: 8px }',
+      '#cconsent-modal .ccm__content > .ccm__content__heading p a { display: inline; margin-left: 4px;}',
       '#cconsent-modal .ccm__content > .ccm__content__heading .ccm__cheading__close {font-weight:600; color:#7C899C; cursor:pointer; font-size:26px; position: absolute; right: 0; top: 0;}',
       '#cconsent-modal h2, #cconsent-modal h3 {margin-top:0}',
       '#cconsent-modal .ccm__content > .ccm__content__body { background-color:#FFF;}',
@@ -58,6 +60,7 @@ export default class Interface {
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tabgroup.ccm__tabgroup--open .ccm__tab-head .ccm__tab-head__icon-wedge {transform:rotate(-180deg)}',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {color: #4C5566; padding:16px; margin:0; display: flex;}',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content {padding: 20px; margin:0; background: #FFF; border: 1px solid rgba(0,0,90, 0.05); border-top: none}',
+      '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-content span { display: inline-block; margin-bottom: 8px }',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head { transition: background-color .5s ease-out }',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head:hover { background-color:#F9F9F9 }',
       '#cconsent-modal .ccm__content > .ccm__content__body .ccm__tab-head {font-weight:400; cursor:pointer; position:relative; font-size: 13px; line-height: 22px;}',
@@ -136,6 +139,16 @@ export default class Interface {
       }
     }
 
+    var splitInParagraphs = function(text) {
+      var paragraphs = text.split('<br/>');
+      var elements = [];
+
+      for(let para in paragraphs){
+        elements.push(el('span', paragraphs[para]));
+      }
+      return elements;
+    }
+
     function modalTabGroups() {
 
       let contentItems = [];
@@ -162,7 +175,7 @@ export default class Interface {
               ),
             ),
             el('dd.ccm__tab-content',
-              el('p', Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description')),
+              el('p', splitInParagraphs(Language.getTranslation(window.CookieConsent.config.categories[key], window.CookieConsent.config.language.current, 'description'))),
               el('div.ccm__list',
                 listCookies(key)
               )
@@ -180,7 +193,7 @@ export default class Interface {
         el('div.ccm__content__heading',
           el('h2', Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalMainTitle')),
           el('p',
-            Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalMainText'),
+            splitInParagraphs(Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'modalMainText')),
             (window.CookieConsent.config.modalMainTextMoreLink) ? el('a', { href: window.CookieConsent.config.modalMainTextMoreLink, target: '_blank', rel: 'noopener noreferrer' }, Language.getTranslation(window.CookieConsent.config, window.CookieConsent.config.language.current, 'learnMore')) : null
           ),
           el('div.ccm__cheading__close', '×')
