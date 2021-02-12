@@ -30,7 +30,7 @@ export default class Interface {
       '@media (max-width: 600px) { #cconsent-modal { height: 100% } }',
       '#cconsent-modal h2, #cconsent-modal h3 {color:#333}',
       '#cconsent-modal.ccm--visible {display:flex}',
-      '#cconsent-modal .ccm__content { max-width:600px; padding: 24px; overflow-Y:auto; background-color:#FFFFFF; }',
+      '#cconsent-modal .ccm__content { max-width:600px; max-height:600px; padding: 24px; overflow-Y:auto; background-color:#FFFFFF; }',
       '@media (max-width: 600px) { #cconsent-modal .ccm__content { max-width:100vw; height:100%; max-height:initial; }}',
       '#cconsent-modal .ccm__content > .ccm__content__heading { background-color:#FFFFFF; position:relative;}',
       '#cconsent-modal .ccm__content > .ccm__content__heading h2 { font-size:18px; line-height: 27px; font-weight:600; color:#00002E; margin:0 0 8px; }',
